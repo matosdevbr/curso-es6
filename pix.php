@@ -8,10 +8,13 @@
     <script src="script.js?<?php echo time(); ?>"></script>
 </head>
 <body>
-    <div class="container bg-warning, text-light">
+    <div class="container bg-warning text-light">
         <h1>Seu banco favorito</h1>
         <div class="row">
-            <div class="col-6 bg-blue"></div>
+            <div class="col-6">
+                <label for="saldoAtual">Saldo Atual:</label>
+                <span id="saldoAtual" type="text">
+            </div>
         </div>
     </div>
 <?php include '../conf/js.php' ?>
