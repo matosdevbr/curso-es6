@@ -35,22 +35,13 @@ class ContaBancaria {
     }
 }
 
-let valorBtnEl = document.getElementById('depositarValor');
-
 
 let x = new ContaBancaria()
 let y = new ContaBancaria()
-window.onload = () => {
-    document.getElementById('saldoAtual').value = (x.consultarSaldo())
-}
-valorBtnEl.onclick = () => {
-    let valorDeposito = Number(document.getElementById('valorDeposito').value)
-    if (valorDeposito <= 0) {
-        console.log('Valor inválido')
-    } else (x.depositar(valorDeposito) > x.saldo - valorDeposito)
-    {
-        x.depositar(valorDeposito)
-        document.getElementById('saldoAtual').value = (x.consultarSaldo())
-        valorDeposito = 0
-    }
-}
+
+
+console.log(x.consultarSaldo())
+x.depositar(450)
+console.log(x.consultarSaldo())
+x.sacar(200)
+console.log(x.consultarSaldo())
