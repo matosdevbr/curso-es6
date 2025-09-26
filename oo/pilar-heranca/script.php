@@ -6,7 +6,7 @@
     <title>Javascript</title>
     <?php include '../../../conf/css.php' ?>
 </head>
-<body>
+<body id="body">
 <script src="script.js?<?php echo time(); ?>"></script>
 <?php include '../../../conf/js.php' ?>
 </body>

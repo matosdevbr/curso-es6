@@ -1,41 +1,25 @@
-class Cachorro {
+class Tv {
     constructor() {
-        this.cor = 'Branco e marrom'
-        this.tamanho = 30
-        this.orelhas = 'Grandes e caídas'
+        this._relacaoCanais = Array(2, 4, 5, 7, 10)
+        this._canalAtivo = 5
+        this._volume = 5
     }
 
-    correr() {
-        console.log('Correndo')
+    get canalAtivo() {
+        return this._canalAtivo
     }
 
-    dormir() {
-        console.log('Dormindo')
-    }
+    set canalAtivo(canal) {
+        //
+        if (this._relacaoCanais.indexOf(canal) !== -1) {
+            this._canalAtivo = canal
+        }
 
-    rosnar() {
-        console.log('Rosnando')
     }
 }
 
-class Passaro {
-    constructor() {
-        this.cor = 'Branco e marrom'
-        this.tamanho = 10
-        this.bico = 'Curto'
-    }
+let tv = new Tv()
+tv.canalAtivo = 7
+console.log(tv.canalAtivo)
 
-    voar() {
-        console.log('Voando')
-    }
-
-    dormir() {
-        console.log('Dormindo')
-    }
-}
-
-let cachorro = new Cachorro()
-let passaro = new Passaro()
-
-console.log(cachorro)
-console.log(passaro)
+// getters setters
