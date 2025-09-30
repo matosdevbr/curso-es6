@@ -1,24 +1,8 @@
 class Animal {
     constructor() {
-        this.cor = prompt('Digite a cor do seu animal')
-        this.tamanho = prompt('Digite o tamanho do seu animal')
-        this.peso = prompt('Digite o peso do seu animal')
-    }
-
-    vetertinario(especie) {
-        especie = prompt('Digite a espécie do seu animal')
-
-        if (especie === 'Cachorro') {
-            document.innerHTML(cachorro).getElementById('body')
-        }
-        if (especie === 'Passaro') {
-            document.innerHTML(passaro).getElementById('body')
-        }
-        if (especie === 'Papagaio') {
-            document.innerHTML(papagaio).getElementById('body')
-        } else {
-            alert('Escolha uma espécie válida')
-        }
+        this.cor = 'blue'
+        this.tamanho = 10
+        this.peso = 50
     }
 
     dormir() {
@@ -76,5 +60,4 @@ passaro.dormir()
 papagaio.falar()
 papagaio.dormir()
 papagaio.voar()
-Animal.veterinario()
 
