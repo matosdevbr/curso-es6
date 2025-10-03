@@ -19,9 +19,13 @@ class Passaro extends Animal {
 
     voar() {
         if (this.voador === true) {
-            console.log('Voando')
+            console.log('O pássaro está voando')
+        }
+        else {
+            console.log('O pássaro não voa')
         }
     }
+
 }
 
 class Papagaio extends Passaro {
@@ -31,41 +35,36 @@ class Papagaio extends Passaro {
     }
 
     falar() {
-        console.log('Falando')
+        if (this.falante === true) {
+            console.log('Falando')
+        }
+        else {
+            console.log('Não sabe falar')
+        }
     }
 }
 
 class Avestruz extends Passaro {
-    constructor(bico, voador, sabeCorrer, cor, tamanho, peso, pescoco) {
+    constructor(bico, voador, pescoco, cor, tamanho, peso) {
         super(bico, voador, cor, tamanho, peso)
-        this.sabeCorrer = sabeCorrer
         this.pescoco = pescoco
     }
 
-    correr() {
-        if (this.sabeCorrer === true) {
-            console.log('Correndo')
-        }
-    }
-
     enterrarCabeca() {
-        if (this.pescoco === 'Longo') {
-            console.log('Consegue enterrar a cabeca')
+        if (this.pescoco === 'longo') {
+            console.log('O avestruz está enterrando a cabeca')
         }
     }
 }
 
 
-let papagaio = new Papagaio('Medio', true, true, 'Verde', 25, 370)
+let papagaio = new Papagaio('Medio', 'Verde', true, 25, 370, true)
 console.log(papagaio)
-let avestruz = new Avestruz('Grande', false, true, 'Marrom', 150, 20000, 'Longo')
+let avestruz = new Avestruz('Grande', 'Branco e marrom', 'longo', 150000, 140, false)
 console.log(avestruz)
 
-papagaio.dormir()
 papagaio.voar()
 papagaio.falar()
 
-avestruz.dormir()
-avestruz.voar()
-avestruz.correr()
 avestruz.enterrarCabeca()
+avestruz.voar()
