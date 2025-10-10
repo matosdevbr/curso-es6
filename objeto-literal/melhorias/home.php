@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="mt-3">
-        <a class="btn btn-danger" onclick='Login.mostrarNome(nome)' id="save" >Próxima página e salvar</a>
+        <a class="btn btn-danger" onclick="mostrarTudo()" href="" id="save" >Próxima página e salvar</a>
     </div>
 
 

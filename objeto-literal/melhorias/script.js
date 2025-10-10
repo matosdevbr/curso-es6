@@ -1,18 +1,36 @@
-class Login {
-    constructor() {
-        this.nome = document.getElementById('nome').value
-        this.idade = document.getElementById('idade').value
-        this.sexo = document.getElementById('sexo').value
-        this.profissao = document.getElementById('profissao').value
-    }
+let nome = 'Henrique'
+let idade = 13
+let sexo = 'Masculino'
+let profissao = 'Programador'
 
-    mostrarNome(nome, save) {
-        nome = this.nome
-        save = document.getElementById('save').value
-    }
+let objeto = {
 
+    nome: nome,
+    idade: idade,
+    sexo: sexo,
+    profissao: profissao,
+
+    exibirResumo: function () {
+        console.log(`${this.nome}, ${this.idade} anos, ${this.sexo}, é ${this.profissao}`)
+    }
 
 }
 
-let login = new Login()
-login.mostrarNome()
+console.log(objeto)
+objeto.exibirResumo()
+
+let objeto2 = {
+
+    nome,
+    idade,
+    sexo,
+    profissao,
+
+    exibirResumo() {
+        console.log(`${this.nome}, ${this.idade} anos, ${this.sexo}, é ${this.profissao}`)
+    }
+
+}
+
+console.log(objeto2)
+objeto2.exibirResumo()
