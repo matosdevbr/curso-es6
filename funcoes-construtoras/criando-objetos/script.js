@@ -1,20 +1,22 @@
-let assinatura = {
-    idCliente: 1,
-    descricao: 'Assinatura a internet',
-    status() {
-        console.log('Assinatura ativa')
+let Carro = () => {
+    this.cor = 'Amarelo'
+    this.velocidadeAtual = 0
+    this.velocidadeMaxima = 180
+
+    this.acelerar = () => {
+        // this.acelerar += 10
+        let velocidade = this.getVelocidadeAtual() + 10
+        this.velocidadeAtual(velocidade)
+    }
+
+    this.getVelocidadeAtual = () => {
+
+        return this.velocidadeAtual
+    }
+
+    this.setVelocidadeAtual = (velocidadeAtual) => {
+        this.velocidadeAtual = velocidadeAtual
     }
 }
 
-console.log(assinatura.descricao)
-
-let y = assinatura
-
-console.log(y.descricao)
-
-// ------------------------------
-
-y.descricao = 'Internet + tv + telefone'
-
-console.log(assinatura.descricao)
-console.log(y.descricao)
+let carro = new Carro()
