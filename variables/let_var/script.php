@@ -8,6 +8,6 @@
     <script src="script.js?<?php echo time(); ?>"></script>
 </head>
 <body>
-<?php include '../../conf/js.php' ?>
+<?php include '../../../conf/js.php' ?>
 </body>
 </html>
