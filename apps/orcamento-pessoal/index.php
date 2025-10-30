@@ -52,7 +52,7 @@
         <div class="col-md-6">
             <label for="tipo"></label>
             <select class="form-control" id="tipo">
-                <option>Tipo</option>
+                <option value="">Tipo</option>
                 <option value="1">Alimentação</option>
                 <option value="2">Educação</option>
                 <option value="3">Lazer</option>
