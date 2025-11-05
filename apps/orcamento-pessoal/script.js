@@ -1,3 +1,23 @@
+const modalAlertTitle = document.getElementById('modal-alert-title')
+const modalAlertBody = document.getElementById('modal-alert-body')
+let modalAlert = null
+
+function showModalAlert(title, body) {
+
+
+    if (!modalAlert) {
+        modalAlert = new bootstrap.Modal('#modal-alert', {
+            keyboard: false
+        })
+    }
+
+    modalAlertTitle.innerHTML = title
+    modalAlertBody.innerHTML = body
+
+
+    modalAlert.show()
+}
+
 class Despesa {
     constructor(ano, mes, dia, tipo, descricao, valor) {
         this.ano = ano
@@ -10,8 +30,8 @@ class Despesa {
     }
 
     validarDados() {
-        for(let i in this) {
-            if(this[i] === undefined || this[i] === '' || this[i] === null) {
+        for (let i in this) {
+            if (this[i] === undefined || this[i] === '' || this[i] === null) {
                 return false
             }
         }
@@ -24,7 +44,7 @@ class Bd {
     constructor() {
         let id = localStorage.getItem('id')
 
-        if(id === null) {
+        if (id === null) {
             localStorage.setItem('id', '0')
         }
     }
@@ -33,6 +53,7 @@ class Bd {
         let currentId = localStorage.getItem('id')
         return parseInt(currentId) + 1
     }
+
     gravar(d) {
         let id = this.getProximoId()
         localStorage.setItem(id, JSON.stringify(d))
@@ -59,12 +80,16 @@ function cadastrarDespesa() {
         descricao.value,
         valor.value
     )
-    if(despesa.validarDados() === true) {
-        // bd.gravar(despesa)
-        console.log('Dados válidos')
+    if (despesa.validarDados() === true) {
+        showModalAlert(
+            'Parabéns',
+            'A despesa foi cadastrada com sucesso!'
+        )
     } else {
-        console.log('Dados inválidos')
+        // console.log('Dados inválidos')
+        showModalAlert(
+            'Oops!',
+            'Existem campos obrigatórios que não foram preenchidos.'
+        )
     }
 }
-
-
