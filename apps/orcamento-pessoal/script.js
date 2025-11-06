@@ -1,8 +1,12 @@
 const modalAlertTitle = document.getElementById('modal-alert-title')
 const modalAlertBody = document.getElementById('modal-alert-body')
+const modalAlertHeader = document.getElementById('modal-alert-header')
+const modalAlertFooter = document.getElementById('modal-alert-footer')
 let modalAlert = null
 
-function showModalAlert(title, body) {
+
+
+function showModalAlert(title, body, header, footer) {
 
 
     if (!modalAlert) {
@@ -13,10 +17,14 @@ function showModalAlert(title, body) {
 
     modalAlertTitle.innerHTML = title
     modalAlertBody.innerHTML = body
+    modalAlertHeader.className = header
+    modalAlertFooter.className = footer
 
 
     modalAlert.show()
 }
+
+// ------------------------------------------------------------------
 
 class Despesa {
     constructor(ano, mes, dia, tipo, descricao, valor) {
@@ -59,6 +67,10 @@ class Bd {
         localStorage.setItem(id, JSON.stringify(d))
         localStorage.setItem('id', id)
     }
+
+    recuperarTodosRegistros(id) {
+        return localStorage.getItem(id)
+    }
 }
 
 let bd = new Bd()
@@ -83,13 +95,40 @@ function cadastrarDespesa() {
     if (despesa.validarDados() === true) {
         showModalAlert(
             'Parabéns',
-            'A despesa foi cadastrada com sucesso!'
+            'A despesa foi cadastrada com sucesso!',
+            'text-success',
+            'btn btn-success'
         )
+        bd.gravar(despesa)
     } else {
-        // console.log('Dados inválidos')
         showModalAlert(
             'Oops!',
-            'Existem campos obrigatórios que não foram preenchidos.'
+            'Existem campos obrigatórios que não foram preenchidos.',
+            'text-danger',
+            'btn btn-danger'
         )
     }
 }
+
+
+// ---------------------------------------------------------------------------------
+
+
+function carregarListaDespesas() {
+
+    let registro = bd.recuperarTodosRegistros(1)
+
+     document.getElementById('tr-carrega-despesa').innerHTML = registro
+
+}
+
+
+
+
+
+
+
+
+
+
+

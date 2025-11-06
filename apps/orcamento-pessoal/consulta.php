@@ -79,7 +79,7 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" onclick="carregarListaDespesas()">
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -95,6 +95,9 @@
                     <th>Descrição</th>
                     <th>Valor</th>
                     <th></th>
+                </tr>
+                <tr id="tr-carrega-despesa">
+
                 </tr>
                 </thead>
 
