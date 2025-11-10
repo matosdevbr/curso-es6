@@ -7,7 +7,7 @@
     <?php include '../../../conf/css.php' ?>
     <?php include '../essecial/font-awesome.php' ?>
 </head>
-<body>
+<body onload="carregarListaDespesas()">
 <?php include 'cabecalho.php' ?>
 <div class="container">
     <div class="row mb-5">

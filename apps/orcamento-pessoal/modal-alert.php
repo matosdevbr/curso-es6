@@ -2,7 +2,7 @@
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div id="modal-alert-header" class="modal-header">
+            <div id="modal-alert-header" class="">
                 <h1 class="modal-title fs-5" id="modal-alert-title">Gravação realizada com sucesso</h1>
             </div>
             <div class="modal-body" id="modal-alert-body">

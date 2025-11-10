@@ -5,7 +5,6 @@ const modalAlertFooter = document.getElementById('modal-alert-footer')
 let modalAlert = null
 
 
-
 function showModalAlert(title, body, header, footer) {
 
 
@@ -68,9 +67,24 @@ class Bd {
         localStorage.setItem('id', id)
     }
 
-    recuperarTodosRegistros(id) {
-        return localStorage.getItem(id)
+    recuperarTodosRegistros() {
+
+        let despesas = []
+
+        let id = localStorage.getItem('id')
+
+        for (let i = 1; i <= id; i++) {
+            let despesa = JSON.parse(localStorage.getItem(i))
+
+            if (despesa === null) {
+                continue
+            }
+
+            despesas.push(despesa)
+        }
+        return despesas
     }
+
 }
 
 let bd = new Bd()
@@ -96,7 +110,7 @@ function cadastrarDespesa() {
         showModalAlert(
             'Parabéns',
             'A despesa foi cadastrada com sucesso!',
-            'text-success',
+            'modal-header text-success',
             'btn btn-success'
         )
         bd.gravar(despesa)
@@ -104,7 +118,7 @@ function cadastrarDespesa() {
         showModalAlert(
             'Oops!',
             'Existem campos obrigatórios que não foram preenchidos.',
-            'text-danger',
+            'modal-header text-danger',
             'btn btn-danger'
         )
     }
@@ -115,10 +129,23 @@ function cadastrarDespesa() {
 
 
 function carregarListaDespesas() {
+    let despesas = Array()
 
-    let registro = bd.recuperarTodosRegistros(1)
+    despesas = bd.recuperarTodosRegistros()
 
-     document.getElementById('tr-carrega-despesa').innerHTML = registro
+    let listaDespesas = document.getElementById('listaDespesas')
+
+    despesas.forEach(function (d) {
+        let linha = listaDespesas.insertRow()
+
+        linha.insertCell(0)
+        linha.insertCell(1)
+        linha.insertCell(2)
+        linha.insertCell(3)
+        linha.insertCell(4)
+        linha.insertCell(5)
+    })
+
 
 }
 
