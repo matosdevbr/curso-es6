@@ -136,15 +136,25 @@ function carregarListaDespesas() {
     let listaDespesas = document.getElementById('listaDespesas')
 
     despesas.forEach(function (d) {
+
+        console.log(d)
+
         let linha = listaDespesas.insertRow()
 
-        linha.insertCell(0)
-        linha.insertCell(1)
-        linha.insertCell(2)
-        linha.insertCell(3)
-        linha.insertCell(4)
-        linha.insertCell(5)
+
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+        linha.insertCell(1).innerHTML =
+
+            swich
+            d.tipo.value
+        linha.insertCell(2).innerHTML = d.descricao
+        linha.insertCell(3).innerHTML = `R$${d.valor}`
     })
+
+    function converterTipo(tipo) {
+        this.tipo = tipo
+
+    }
 
 
 }

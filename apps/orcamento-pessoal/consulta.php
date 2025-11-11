@@ -55,11 +55,11 @@
             <label for="">
                 <select class="form-control" id="tipo">
                     <option>Tipo</option>
-                    <option value="1">Alimentação</option>
-                    <option value="2">Educação</option>
-                    <option value="3">Lazer</option>
-                    <option value="4">Saúde</option>
-                    <option value="5">Transporte</option>
+                    <option id="1" value="1">Alimentação</option>
+                    <option id="1" value="2">Educação</option>
+                    <option id="1" value="3">Lazer</option>
+                    <option id="1" value="4">Saúde</option>
+                    <option id="1" value="5">Transporte</option>
                 </select>
             </label>
         </div>
@@ -96,12 +96,9 @@
                     <th>Valor</th>
                     <th></th>
                 </tr>
-                <tr id="tr-carrega-despesa">
-
-                </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="listaDespesas">
                 </tbody>
             </table>
         </div>
