@@ -22,6 +22,13 @@
                 <select class="form-control" id="ano">
                     <option value="">Ano</option>
                     <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
                 </select>
             </label>
         </div>
@@ -54,7 +61,7 @@
         <div class="col-md-6">
             <label for="">
                 <select class="form-control" id="tipo">
-                    <option>Tipo</option>
+                    <option value="">Tipo</option>
                     <option id="1" value="1">Alimentação</option>
                     <option id="1" value="2">Educação</option>
                     <option id="1" value="3">Lazer</option>
@@ -79,7 +86,7 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" onclick="carregarListaDespesas()">
+            <button type="button" class="btn btn-primary" onclick="carregarListaDespesas(); pesquisarDespesas()">
                 <i class="fas fa-search"></i>
             </button>
         </div>
