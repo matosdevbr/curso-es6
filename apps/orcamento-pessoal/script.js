@@ -88,42 +88,6 @@ class Bd {
     }
 
     pesquisar(despesa) {
-        let despesasFiltradas = this.recuperarTodosRegistros()
-        console.log(despesasFiltradas)
-
-        // ano
-        if (despesa.ano !== '') {
-            console.log('filtro de ano')
-            despesasFiltradas = despesasFiltradas.filter(d => d.ano === despesa.ano)
-        }
-        // mes
-        if (despesa.mes !== '') {
-            console.log('filtro de mes')
-            despesasFiltradas = despesasFiltradas.filter(d => d.mes === despesa.mes)
-        }
-        // dia
-        if (despesa.dia !== '') {
-            console.log('filtro de dia')
-            despesasFiltradas = despesasFiltradas.filter(d => d.dia === despesa.dia)
-        }
-        // tipo
-        if (despesa.tipo !== '') {
-            console.log('filtro de tipo')
-            despesasFiltradas = despesasFiltradas.filter(d => d.tipo === despesa.tipo)
-        }
-        // descricao
-        if (despesa.descricao !== '') {
-            console.log('filtro de descrição')
-            despesasFiltradas = despesasFiltradas.filter(d => d.descricao === despesa.descricao)
-        }
-        // valor
-        if (despesa.valor !== '') {
-            console.log('filtro de valor')
-            despesasFiltradas = despesasFiltradas.filter(d => d.valor === despesa.valor)
-        }
-
-        console.log(despesasFiltradas)
-        return despesasFiltradas
     }
 }
 
@@ -233,4 +197,33 @@ function pesquisarDespesas() {
     let despesas = bd.pesquisar(despesa)
 
     let listaDespesas = document.getElementById('listaDespesas')
+
+    despesas.forEach(function (d) {
+
+        let linha = listaDespesas.insertRow()
+        listaDespesas.innerHTML = ''
+
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+
+
+        switch (d.tipo) {
+            case '1':
+                d.tipo = 'Alimentação'
+                break
+            case '2':
+                d.tipo = 'Educação'
+                break
+            case '3':
+                d.tipo = 'Lazer'
+                break
+            case '4':
+                d.tipo = 'Saúde'
+                break
+            case '5':
+                d.tipo = 'Transporte'
+        }
+        linha.insertCell(1).innerHTML = d.tipo
+        linha.insertCell(2).innerHTML = d.descricao
+        linha.insertCell(3).innerHTML = `R$${d.valor}`
+    })
 }
