@@ -7,7 +7,7 @@
     <?php include '../../../conf/css.php' ?>
     <?php include '../essecial/font-awesome.php' ?>
 </head>
-<body onload="carregarListaDespesas()">
+<body onload="carregaListaDespesas()">
 <?php include 'cabecalho.php' ?>
 <div class="container">
     <div class="row mb-5">
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" onclick="carregarListaDespesas(); pesquisarDespesas()">
+            <button type="button" class="btn btn-primary" onclick="pesquisarDespesas()">
                 <i class="fas fa-search"></i>
             </button>
         </div>
